@@ -17,4 +17,4 @@ def json():
 
 # 直接右键运行，点击链接输入路由
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=80)
