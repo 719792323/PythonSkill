@@ -1,5 +1,6 @@
 from threading import Thread, current_thread, Lock
 import time
+from loguru import logger as log
 
 lock = Lock()
 
@@ -7,10 +8,10 @@ lock = Lock()
 def test_lock():
     # 获取锁
     lock.acquire()
-    print("thread:{},get lock".format(current_thread().name))
+    log.info("thread:{},get lock".format(current_thread().name))
     time.sleep(5)
     # 释放锁
-    print("thread:{},release lock".format(current_thread().name))
+    log.info("thread:{},release lock".format(current_thread().name))
     lock.release()
 
 
